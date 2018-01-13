@@ -1,9 +1,9 @@
 
 # Hashcrypt
 
-https://github.com/roobie/hashcrypt
+Local/offline/decentralized/non-storing password manager.
 
-Non-storing solution for managing all your passwords via a master password.
+Easily manage passwords for sites by having one (or more) master passwords, that combined with the site you're on, results in a random password.
 
 Hashcrypt uses the hash algorithm known as SHA-512 with your master password and the site's ID (FQDN/domain) as parameters to compute the the password for a site
 
