@@ -1,0 +1,24 @@
+{
+  "name": "hashcrypt",
+  "version": "1.0.0-beta1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tap src/**/*.spec.js",
+    "test:continuous": "nodemon --watch src --exec \"npm test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roobie/hashcrypt.git"
+  },
+  "author": "BR",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/roobie/hashcrypt/issues"
+  },
+  "homepage": "https://github.com/roobie/hashcrypt#readme",
+  "devDependencies": {
+    "nodemon": "^1.14.11",
+    "tap": "^11.0.1"
+  }
+}
