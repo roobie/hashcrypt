@@ -26,17 +26,15 @@
         Site password
         <input name="site-password" id="site-password" type="text" disabled="" />
       </label>
-      <small>
-        The site's password is the first 20 characters of the result from computing the
-        SHA-512 sum of the combination of the site's ID (FQDN/domain) and your master password.
-        <pre>sitePassword = SHA-512(siteId + masterPassword).slice(0, 20)</pre>
-      </small>
     </div>
     <div class="col">
       <button id="action-inject" type="button">Inject</button>
     </div>
     <div class="col hidden">
       <pre id="debug-output"></pre>
+    </div>
+    <div class="col">
+      <a href="https://github.com/roobie/hashcrypt">Hashcrypt</a>
     </div>
   </div>
   <script src="sha512.js"></script>

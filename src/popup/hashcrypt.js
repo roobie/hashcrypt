@@ -10,9 +10,8 @@ browser.tabs.executeScript({file: "/content_scripts/hashcrypt.js"})
   .then(initialize)
   .catch(reportExecuteScriptError)
 
-const qs = document.querySelector.bind(document)
-
 function initialize () {
+  const qs = document.querySelector.bind(document)
   const inputMasterPassword = qs('#master-password')
   const outputSitePassword = qs('#site-password')
   const actionInject = qs('#action-inject')
@@ -67,6 +66,7 @@ function initialize () {
  * Display the popup's error message, and hide the normal UI.
  */
 function reportExecuteScriptError (error) {
+  const qs = document.querySelector.bind(document)
   const outputDebug = qs('#debug-output')
   outputDebug.display = 'block'
   outputDebug.textContent = `
