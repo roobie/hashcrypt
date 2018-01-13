@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "package": "cd src;  zip -r ../hashcrypt.zip .",
     "test": "tap src/**/*.spec.js",
     "test:continuous": "nodemon --watch src --exec \"npm test\""
   },

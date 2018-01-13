@@ -37,7 +37,6 @@ function initialize () {
     browser.tabs.query({active: true, currentWindow: true})
       .then(tabs => tabs[0])
       .then(tab => {
-        outputDebug.innerHTML = JSON.stringify(tab, null, 2)
         const siteId = new URL(tab.url).host
         const sitePassword = sha512(siteId + masterPassword).slice(0, PW_LENGTH)
         outputSitePassword.value = sitePassword
@@ -70,14 +69,9 @@ function initialize () {
 function reportExecuteScriptError (error) {
   const outputDebug = qs('#debug-output')
   outputDebug.display = 'block'
-  outputDebug.innerHTML = `
-<div>
-<h3>Something went wrong :(</h3>
-<a href="https://github.com/roobie/hashcrypt/issues">Report issue</a>
-<hr/>
-<pre>${error.message}</pre>
-</div>
-`
+  outputDebug.textContent = `
+https://github.com/roobie/hashcrypt/issues"
+${error.message}`
 }
 
 // function checkStoredSettings (storedSettings) {
