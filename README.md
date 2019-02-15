@@ -3,7 +3,7 @@
 
 Local/offline/decentralized/non-storing password manager.
 
-Easily manage passwords for sites by having one (or more) master passwords, that combined with the site you're on, results in a random password.
+Easily manage passwords for sites by having one (or more) master passwords, that combined with the site you're on, results in a deterministically random password.
 
 Hashcrypt uses the hash algorithm known as SHA-512 with your master password and the site's ID (FQDN/domain) as parameters to compute the the password for a site
 
