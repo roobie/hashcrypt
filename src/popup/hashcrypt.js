@@ -37,8 +37,29 @@ function initialize () {
       .then(tabs => tabs[0])
       .then(tab => {
         const siteId = new URL(tab.url).host
-        const sitePassword = sha512(siteId + masterPassword).slice(0, PW_LENGTH)
-        outputSitePassword.value = sitePassword
+        const hash = sha512(siteId + masterPassword).slice(0, PW_LENGTH)
+        const sitePasswordArr = []
+
+        // make sure there are upper and lower case chars
+        for (let i = 0; i < hash.length; ++i) {
+          if (i % 2 === 0) {
+            sitePasswordArr[i] = hash[i].toUpperCase()
+          } else {
+            sitePasswordArr[i] = hash[i].toLowerCase()
+          }
+        }
+
+        // Set a special char at the index of the first found decimal number of
+        // hash, so that the password has one.
+        for (let i = 0; i < sitePasswordArr.length; ++i) {
+          const num = parseInt(sitePasswordArr[i], 10)
+          if (!isNaN(num)) {
+            sitePasswordArr[num] = "$"
+            break
+          }
+        }
+
+        outputSitePassword.value = sitePasswordArr.join('')
       })
   })
 
